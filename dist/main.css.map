@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAEA,KACE,gD","sources":["webpack://hr-site/./src/styles/_global.scss"],"sourcesContent":["@use 'variables';\n\nbody {\n  background: url(../images/Screenshot\\ 2022-11-15\\ at\\ 14.34.41.png);\n}\n"],"names":[],"sourceRoot":""}
