@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
-    assetModuleFilename: 'images/[hash][ext][query]',
+    clean: true,
+    assetModuleFilename: 'assets/[hash][ext][query]',
   },
 
   plugins: [
@@ -47,7 +48,4 @@ module.exports = {
     ],
   },
   devtool: 'source-map',
-  resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js', '.css'],
-  }
 }

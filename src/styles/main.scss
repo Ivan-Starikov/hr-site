@@ -1,2 +1,243 @@
 @use 'global';
+@use 'variables';
+@use 'layout';
+@use 'swiper';
 
+.intro-section {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @media screen and (max-width: variables.$tablet) {
+      flex-direction: column;
+      align-items: center;
+    };
+  };
+
+  &__info {
+    padding-left: 4.5rem;
+
+    @media screen and (max-width: variables.$tablet) {
+      padding: 0 2rem;
+    };
+  };
+
+  &__text {
+    max-width: 22.8rem;
+  };
+
+  &__logo {
+    width: 100%;
+    max-width: 14rem;
+    height: auto;
+    margin: 5.875rem 0 3.8rem;
+  };
+
+  &__img {
+    width: 100%;
+    max-width: 38rem;
+    height: auto;
+  };
+};
+
+.vacancies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 47rem;
+  text-align: center;
+  margin: -9rem auto 6rem;
+  padding: 0.7rem 6rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 2px 10px rgba(0, 58, 64, 0.2);
+  border-radius: 1.875rem;
+  z-index: 100;
+
+  @media screen and (max-width: 1225px) {
+    max-width: 35rem;
+  };
+
+  @media screen and (max-width: variables.$tablet) {
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    gap: 1rem;
+    margin-top: 3rem;
+    max-width: auto;
+  };
+
+  &__button {
+    padding: 0.5rem 3rem;
+    font-size: variables.$md;
+    background-color: variables.$blue-bg;
+    border: 1px dashed variables.$blue-font;
+    color: variables.$white-font;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      color: variables.$blue-font;
+      background-color: white;
+      border: 1px dashed variables.$blue-font;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: variables.$md;
+  }
+};
+
+.about-section {
+  width: 100%;
+
+  &__img {
+    width: 100%;
+    max-width: 37rem;
+    height: auto;
+  };
+
+  &__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: variables.$tablet) {
+      flex-direction: column;
+      align-items: center;
+    };
+  };
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem;
+  };
+
+  &__text {
+    max-width: 35rem;
+  };
+
+  &__heading {
+    &--blue {
+      color: variables.$blue-font;
+    };
+  };
+
+};
+
+.benifit {
+  width: 12.5rem;
+  padding: 2.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(136, 140, 140, 0.4);
+  border-radius: 30px;
+  z-index: 100;
+  transition: 0.4s;
+  text-align: start;
+    &:hover {
+      background-color: variables.$blue-bg;
+      color: white;
+      border: 1px dashed variables.$blue-font;
+    };
+
+    @media screen and (max-width: variables.$tablet) {
+      padding: 1.5rem;
+      margin: 4rem auto;
+    };
+
+  &__heading {
+    display: block;
+    margin: 2rem 0;
+    font-weight: 700;
+    font-size: variables.$md;
+  };
+};
+
+.team-section {
+  &__swiper {
+    width: 100%;
+    height: 25rem;
+    padding: 4rem 0;
+    border-radius: 2rem;
+  };
+
+  .swiper-button-next, .swiper-button-prev {
+    top: auto;
+    bottom: -0.2rem;
+  };
+
+  .swiper-button-prev {
+    left: 33rem;
+  };
+
+  .swiper-button-next {
+    right: 33rem;
+  };
+};
+
+.people-section {
+  margin: 3rem 0;
+  padding: 2rem;
+
+  &__swiper {
+    width: 100%;
+    height: 25rem;
+    padding-bottom: 4rem;
+    border-radius: 2rem;
+  };
+
+  &__content {
+    display: flex;
+
+    @media screen and (max-width: variables.$tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    };
+  };
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  };
+
+  &__name {
+    font-size: variables.$md;
+    font-weight: 700;
+  };
+
+  &__position {
+    margin-bottom: 1rem;
+  };
+
+  &__img {
+    margin-right: 1rem;
+  };
+
+  .swiper-button-next, .swiper-button-prev {
+    top: 60%;
+  };
+
+  .swiper-button-prev {
+    left: 0rem;
+  };
+
+  .swiper-button-next {
+    left: 3rem;
+  };
+
+  .swiper-pagination {
+    display: none;
+
+    @media screen and (max-width: variables.$tablet) {
+      display: block;
+    };
+  }
+};

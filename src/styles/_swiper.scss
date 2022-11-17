@@ -1,0 +1,44 @@
+@use 'variables';
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  img {
+    display: block;
+    object-fit: cover;
+  };
+};
+
+.swiper-pagination {
+  &-bullet {
+    top: 2rem;
+    width: 12px;
+    height: 12px;
+  };
+
+  &-bullet-active {
+    background: variables.$blue-bg;
+  };
+};
+
+.swiper-button-prev {
+  &::before {
+    content: url(../images/arrow-left.svg);
+  };
+
+  &::after {
+    display: none;
+  };
+};
+
+.swiper-button-next {
+  &::before {
+    content: url(../images/arrow-right.svg);
+  }
+
+  &::after {
+    display: none;
+  };
+};

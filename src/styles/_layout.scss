@@ -1,0 +1,15 @@
+@use 'variables';
+
+.wrapper {
+  margin: 0 8rem;
+  @media screen and (max-width: variables.$tablet) {
+    margin: 0 1.5rem;
+  };
+}
+
+.container {
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  background: linear-gradient(180deg, variables.$white-bg 0%, rgba(245, 245, 245, 0) 70.67%);
+}
