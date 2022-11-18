@@ -14,7 +14,6 @@ import team1 from './images/team-1.jpg';
 import team2 from './images/team-2.jpg';
 import team3 from './images/team-3.jpg';
 import team4 from './images/team-4.jpg';
-import team5 from './images/team-5.jpg';
 import guy1 from './images/guy-1.jpg';
 import guy2 from './images/guy-2.jpg';
 
@@ -39,20 +38,17 @@ chillImg[2].src = chill;
 const dentistImg = document.getElementsByClassName('benifit__img');
 dentistImg[3].src = dentist;
 
-const team1Img = document.getElementsByClassName('team-section_img');
+const team1Img = document.getElementsByClassName('team-section__img');
 team1Img[0].src = team1;
 
-const team2Img = document.getElementsByClassName('team-section_img');
+const team2Img = document.getElementsByClassName('team-section__img');
 team2Img[1].src = team2;
 
-const team3Img = document.getElementsByClassName('team-section_img');
+const team3Img = document.getElementsByClassName('team-section__img');
 team3Img[2].src = team3;
 
-const team4Img = document.getElementsByClassName('team-section_img');
+const team4Img = document.getElementsByClassName('team-section__img');
 team4Img[3].src = team4;
-
-const team5Img = document.getElementsByClassName('team-section_img');
-team5Img[4].src = team5;
 
 const person1Img = document.getElementsByClassName('people-section__img');
 person1Img[0].src = guy1;
@@ -84,17 +80,23 @@ const swiper = new Swiper('.swiper', {
 
 const swiperAbout = new Swiper('.about-section__swiper', {
   slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+  },
 
   breakpoints: {
-    '570': {
+    320: {
+      slidesPerView: 1,
+    },
+    570: {
       slidesPerView: 2,
     },
-    '900': {
+    900: {
       slidesPerView: 3,
     },
-    '1380': {
+    1380: {
       slidesPerView: 4,
-      spaceBetween: 30,
+      noSwiping: true,
     },
   }
 });

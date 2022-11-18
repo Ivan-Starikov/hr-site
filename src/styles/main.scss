@@ -52,7 +52,7 @@
   max-width: 47rem;
   text-align: center;
   margin: -9rem auto 6rem;
-  padding: 0.7rem 6rem;
+  padding: 1rem 6rem;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 2px 10px rgba(0, 58, 64, 0.2);
   border-radius: 1.875rem;
@@ -67,8 +67,18 @@
     justify-content: center;
     width: auto;
     gap: 1rem;
+    padding: 1rem 4rem;
     margin-top: 3rem;
-    max-width: auto;
+    max-width: 20rem;
+  };
+
+  @media screen and (max-width: 25rem) {
+    max-width: 8rem;
+  };
+
+  @media screen and (max-width: 15rem) {
+    padding: 0.7rem 2rem;
+    max-width: 3rem;
   };
 
   &__button {
@@ -80,6 +90,7 @@
     border-radius: 1.25rem;
     cursor: pointer;
     transition: 0.4s;
+
     &:hover {
       color: variables.$blue-font;
       background-color: white;
@@ -106,10 +117,12 @@
     display: flex;
     align-items: center;
     width: 100%;
+    margin-bottom: -3rem;
 
     @media screen and (max-width: variables.$tablet) {
       flex-direction: column;
       align-items: center;
+      gap: 3rem;
     };
   };
 
@@ -117,6 +130,9 @@
     display: flex;
     flex-direction: column;
     padding: 0 4rem;
+    @media screen and (max-width: variables.$tablet) {
+      padding-bottom: 4rem;
+    };
   };
 
   &__text {
@@ -129,21 +145,51 @@
     };
   };
 
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    img {
+      width: 4rem;
+      height: auto;
+    };
+  };
+
+  .swiper-pagination {
+    display: none;
+    
+    &-bullet {
+      top: 1rem;
+      width: 0.6rem;
+      height: 0.6rem;
+
+      &-active {
+        background-color: variables.$blue-bg;
+      };
+    };
+
+    @media screen and (max-width: variables.$tablet) {
+      display: block;
+    };
+  };
 };
 
 .benifit {
   width: 12.5rem;
+  min-height: 24rem;
   padding: 2.5rem;
+  margin-bottom: 2.5rem;
   background: #ffffff;
   border: 1px solid rgba(136, 140, 140, 0.4);
-  border-radius: 30px;
-  z-index: 100;
+  border-radius: 1.8rem;
   transition: 0.4s;
   text-align: start;
+
     &:hover {
       background-color: variables.$blue-bg;
       color: white;
-      border: 1px dashed variables.$blue-font;
+      border: 1px dashed transparent;
     };
 
     @media screen and (max-width: variables.$tablet) {
@@ -162,22 +208,59 @@
 .team-section {
   &__swiper {
     width: 100%;
-    height: 25rem;
-    padding: 4rem 0;
+    height: 23rem;
+    margin: 3rem 0;
+    padding-bottom: 13rem;
     border-radius: 2rem;
+
+    @media screen and (max-width: 91.875rem) {
+      padding-bottom: 4rem;
+      height: auto;
+    };
+  };
+
+  .swiper-slide {
+    img {
+      display: block;
+      object-fit: contain;
+    };
+  };
+
+  .swiper-pagination {
+    &-bullet {
+      top: 1rem;
+      width: 0.6rem;
+      height: 0.6rem;
+
+      &-active {
+        background-color: variables.$blue-bg;
+      };
+    };
   };
 
   .swiper-button-next, .swiper-button-prev {
     top: auto;
     bottom: -0.2rem;
+
+    @media screen and (max-width: 91.875rem) {
+      left: 26rem;
+    };
   };
 
   .swiper-button-prev {
     left: 33rem;
+
+    @media screen and (max-width: 92.125rem) {
+      display: none;
+    };
   };
 
   .swiper-button-next {
     right: 33rem;
+
+    @media screen and (max-width: 92.125rem) {
+      display: none;
+    };
   };
 };
 
@@ -190,6 +273,10 @@
     height: 25rem;
     padding-bottom: 4rem;
     border-radius: 2rem;
+
+    @media screen and (max-width: variables.$tablet) {
+      padding-bottom: 2rem;
+    };
   };
 
   &__content {
@@ -198,7 +285,7 @@
     @media screen and (max-width: variables.$tablet) {
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
+      gap: 4rem;
     };
   };
 
@@ -218,11 +305,15 @@
   };
 
   &__img {
-    margin-right: 1rem;
+    padding-bottom: 1rem;
   };
 
   .swiper-button-next, .swiper-button-prev {
     top: 60%;
+
+    @media screen and (max-width: variables.$tablet) {
+      display: none;
+    };
   };
 
   .swiper-button-prev {
@@ -236,8 +327,18 @@
   .swiper-pagination {
     display: none;
 
+    &-bullet {
+      top: 1rem;
+      width: 0.6rem;
+      height: 0.6rem;
+
+      &-active {
+        background-color: variables.$blue-bg;
+      };
+    };
+
     @media screen and (max-width: variables.$tablet) {
       display: block;
     };
-  }
+  };
 };
