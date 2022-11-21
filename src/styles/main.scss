@@ -36,7 +36,7 @@
   &__logo {
     width: 100%;
     height: auto;
-    max-width: 14rem;
+    max-width: 17rem;
     margin: 5.875rem 0 3.8rem;
   };
 
@@ -53,7 +53,7 @@
   align-items: center;
   width: 100%;
   max-width: 49rem;
-  margin: -12rem auto 6rem;
+  margin: -14rem auto 6rem;
   padding: 1rem 6rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
@@ -99,11 +99,19 @@
       background-color: white;
       border: 1px dashed variables.$blue-font;
     };
+
+    @media screen and (max-width: variables.$sm) {
+      font-size: variables.$sm-font;
+    };
   };
 
   &__link {
-    font-weight: 700;
+    font-weight: 500;
     font-size: variables.$md-font;
+
+    @media screen and (max-width: variables.$sm) {
+      font-size: variables.$xs-font;
+    };
   };
 };
 
@@ -114,7 +122,7 @@
 
   &__img {
     width: 100%;
-    max-width: 37rem;
+    max-width: 35rem;
     height: auto;
   };
 
@@ -127,7 +135,6 @@
     @media screen and (max-width: variables.$lg) {
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
     };
   };
 
