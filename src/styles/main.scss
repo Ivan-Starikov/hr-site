@@ -127,7 +127,7 @@
     @media screen and (max-width: variables.$lg) {
       flex-direction: column;
       align-items: center;
-      gap: 2 rem;
+      gap: 2rem;
     };
   };
 
@@ -252,16 +252,20 @@
   .swiper-button-next, .swiper-button-prev {
     top: auto;
     bottom: -0.3rem;
-
-    @media screen and (max-width: variables.$xxxl) {
-      left: 26rem;
-    };
   };
 
   .swiper-button-prev {
     left: 33rem;
 
     @media screen and (max-width: variables.$xxxl) {
+      left: 29rem;
+    };
+
+    @media screen and (max-width: variables.$xxl) {
+      left: 25rem;
+    };
+
+    @media screen and (max-width: variables.$lg) {
       display: none;
     };
   };
@@ -270,6 +274,14 @@
     right: 33rem;
 
     @media screen and (max-width: variables.$xxxl) {
+      right: 29rem;
+    };
+
+    @media screen and (max-width: variables.$xxl) {
+      right: 25rem;
+    };
+
+    @media screen and (max-width: variables.$lg) {
       display: none;
     };
   };

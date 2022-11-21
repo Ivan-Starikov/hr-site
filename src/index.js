@@ -59,7 +59,7 @@ person1Img[0].src = guy1;
 const person2Img = document.getElementsByClassName('people-section__img');
 person2Img[1].src = guy2;
 
-const swiper = new Swiper('.team-section__swiper', {
+const swiperTeam = new Swiper('.team-section__swiper', {
   modules: [Navigation, Pagination],
   direction: 'horizontal',
   pagination: {
