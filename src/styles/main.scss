@@ -3,6 +3,9 @@
 @use 'layout';
 @use 'swiper';
 
+
+// intro-section
+
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -12,7 +15,7 @@
     justify-content: space-between;
     gap: 3rem;
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$md) {
       flex-direction: column;
       align-items: center;
     };
@@ -21,7 +24,7 @@
   &__info {
     padding-left: 4.5rem;
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$md) {
       padding: 0 2rem;
     };
   };
@@ -32,14 +35,14 @@
 
   &__logo {
     width: 100%;
-    max-width: 14rem;
     height: auto;
+    max-width: 14rem;
     margin: 5.875rem 0 3.8rem;
   };
 
   &__img {
     width: 100%;
-    max-width: 38rem;
+    max-width: 44rem;
     height: auto;
   };
 };
@@ -49,20 +52,20 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 47rem;
-  text-align: center;
-  margin: -9rem auto 6rem;
+  max-width: 49rem;
+  margin: -12rem auto 6rem;
   padding: 1rem 6rem;
+  text-align: center;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 2px 10px rgba(0, 58, 64, 0.2);
   border-radius: 1.875rem;
   z-index: 100;
 
-  @media screen and (max-width: 1225px) {
+  @media screen and (max-width: variables.$lg) {
     max-width: 35rem;
   };
 
-  @media screen and (max-width: variables.$tablet) {
+  @media screen and (max-width: variables.$lg) {
     flex-direction: column;
     justify-content: center;
     width: auto;
@@ -72,37 +75,39 @@
     max-width: 20rem;
   };
 
-  @media screen and (max-width: 25rem) {
+  @media screen and (max-width: variables.$xs) {
     max-width: 8rem;
   };
 
-  @media screen and (max-width: 15rem) {
+  @media screen and (max-width: variables.$xxs) {
     padding: 0.7rem 2rem;
     max-width: 3rem;
   };
 
   &__button {
     padding: 0.5rem 3rem;
-    font-size: variables.$md;
+    font-size: variables.$md-font;
     background-color: variables.$blue-bg;
     border: 1px dashed variables.$blue-font;
     color: variables.$white-font;
     border-radius: 1.25rem;
-    cursor: pointer;
     transition: 0.4s;
+    cursor: pointer;
 
     &:hover {
       color: variables.$blue-font;
       background-color: white;
       border: 1px dashed variables.$blue-font;
-    }
-  }
+    };
+  };
 
   &__link {
     font-weight: 700;
-    font-size: variables.$md;
-  }
+    font-size: variables.$md-font;
+  };
 };
+
+// about-section
 
 .about-section {
   width: 100%;
@@ -119,10 +124,10 @@
     width: 100%;
     margin-bottom: -3rem;
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$lg) {
       flex-direction: column;
       align-items: center;
-      gap: 3rem;
+      gap: 2rem;
     };
   };
 
@@ -130,8 +135,9 @@
     display: flex;
     flex-direction: column;
     padding: 0 4rem;
-    @media screen and (max-width: variables.$tablet) {
-      padding-bottom: 4rem;
+
+    @media screen and (max-width: variables.$lg) {
+      padding: 4rem 2rem;
     };
   };
 
@@ -147,18 +153,16 @@
 
   .swiper-slide {
     text-align: center;
-    font-size: 18px;
-    background: #fff;
+    background: transparent;
 
     img {
-      width: 4rem;
-      height: auto;
+      width: 3rem;
     };
   };
 
   .swiper-pagination {
     display: none;
-    
+
     &-bullet {
       top: 1rem;
       width: 0.6rem;
@@ -169,7 +173,7 @@
       };
     };
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$xxl) {
       display: block;
     };
   };
@@ -177,7 +181,7 @@
 
 .benifit {
   width: 12.5rem;
-  min-height: 24rem;
+  min-height: 24.7rem;
   padding: 2.5rem;
   margin-bottom: 2.5rem;
   background: #ffffff;
@@ -185,6 +189,7 @@
   border-radius: 1.8rem;
   transition: 0.4s;
   text-align: start;
+  cursor: pointer;
 
     &:hover {
       background-color: variables.$blue-bg;
@@ -192,18 +197,20 @@
       border: 1px dashed transparent;
     };
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$lg) {
       padding: 1.5rem;
       margin: 4rem auto;
     };
 
   &__heading {
     display: block;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     font-weight: 700;
-    font-size: variables.$md;
+    font-size: variables.$md-font;
   };
 };
+
+// team-section
 
 .team-section {
   &__swiper {
@@ -213,7 +220,7 @@
     padding-bottom: 13rem;
     border-radius: 2rem;
 
-    @media screen and (max-width: 91.875rem) {
+    @media screen and (max-width: variables.$xxxl) {
       padding-bottom: 4rem;
       height: auto;
     };
@@ -231,8 +238,12 @@
       top: 1rem;
       width: 0.6rem;
       height: 0.6rem;
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 100%;
 
       &-active {
+        border: 1px solid variables.$blue-bg;
         background-color: variables.$blue-bg;
       };
     };
@@ -240,9 +251,9 @@
 
   .swiper-button-next, .swiper-button-prev {
     top: auto;
-    bottom: -0.2rem;
+    bottom: -0.3rem;
 
-    @media screen and (max-width: 91.875rem) {
+    @media screen and (max-width: variables.$xxxl) {
       left: 26rem;
     };
   };
@@ -250,7 +261,7 @@
   .swiper-button-prev {
     left: 33rem;
 
-    @media screen and (max-width: 92.125rem) {
+    @media screen and (max-width: variables.$xxxl) {
       display: none;
     };
   };
@@ -258,31 +269,36 @@
   .swiper-button-next {
     right: 33rem;
 
-    @media screen and (max-width: 92.125rem) {
+    @media screen and (max-width: variables.$xxxl) {
       display: none;
     };
   };
 };
+
+// people-section
 
 .people-section {
   margin: 3rem 0;
   padding: 2rem;
 
   &__swiper {
-    width: 100%;
-    height: 25rem;
-    padding-bottom: 4rem;
+    padding: 1rem 0 2.5rem;
     border-radius: 2rem;
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: 80rem) {
+      padding-bottom: 10rem;
+    };
+
+    @media screen and (max-width: variables.$md) {
       padding-bottom: 2rem;
     };
   };
 
   &__content {
     display: flex;
+    gap: 2rem;
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$sm) {
       flex-direction: column;
       align-items: center;
       gap: 4rem;
@@ -296,7 +312,7 @@
   };
 
   &__name {
-    font-size: variables.$md;
+    font-size: variables.$md-font;
     font-weight: 700;
   };
 
@@ -311,7 +327,7 @@
   .swiper-button-next, .swiper-button-prev {
     top: 60%;
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$md) {
       display: none;
     };
   };
@@ -331,13 +347,17 @@
       top: 1rem;
       width: 0.6rem;
       height: 0.6rem;
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 100%;
 
       &-active {
+        border: 1px solid variables.$blue-bg;
         background-color: variables.$blue-bg;
       };
     };
 
-    @media screen and (max-width: variables.$tablet) {
+    @media screen and (max-width: variables.$md) {
       display: block;
     };
   };

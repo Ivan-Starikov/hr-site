@@ -1,10 +1,6 @@
 @use 'variables';
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
   img {
     width: 100%;
     display: block;
@@ -26,7 +22,7 @@
 .swiper-button-next {
   &::before {
     content: url(../images/arrow-right.svg);
-  }
+  };
 
   &::after {
     display: none;

@@ -1,6 +1,9 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import './styles/main.scss';
 
 import logo from './images/logo.png'
@@ -56,34 +59,47 @@ person1Img[0].src = guy1;
 const person2Img = document.getElementsByClassName('people-section__img');
 person2Img[1].src = guy2;
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.team-section__swiper', {
   modules: [Navigation, Pagination],
   direction: 'horizontal',
-
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
-
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.team-section__arrow-right',
+    prevEl: '.team-section__arrow-left',
   },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
 
+const swiperPeople = new Swiper('.people-section__swiper', {
+  modules: [Navigation, Pagination],
+  direction: 'horizontal',
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.people-section__arrow-right',
+    prevEl: '.people-section__arrow-left',
+  },
   scrollbar: {
     el: '.swiper-scrollbar',
   },
 });
 
 const swiperAbout = new Swiper('.about-section__swiper', {
+  modules: [Pagination],
+  nested: true,
   slidesPerView: 1,
+  loop: false,
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
+    clickable: true,
   },
-
   breakpoints: {
     320: {
       slidesPerView: 1,
@@ -96,7 +112,6 @@ const swiperAbout = new Swiper('.about-section__swiper', {
     },
     1380: {
       slidesPerView: 4,
-      noSwiping: true,
     },
-  }
+  },
 });
